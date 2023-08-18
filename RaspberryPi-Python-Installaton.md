@@ -32,3 +32,4 @@ OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
     $ sudo rm pip
     $ ln -s /usr/local/bin/pip3.7 /usr/bin/pip
 
+### Python 3.7.9 Installation Finished
