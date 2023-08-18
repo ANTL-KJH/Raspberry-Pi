@@ -31,5 +31,5 @@ OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
     $ cp pip pip1
     $ sudo rm pip
     $ ln -s /usr/local/bin/pip3.7 /usr/bin/pip
-
+/usr/bin/pip 의 경우 기존 설치되어있던 파이썬 버전의 pip이다. 따라서 새로 설치한 파이썬 버전에 맞는 pip를 link해주어야 한다. 기존 pip를 pip1로 복사해두고 새로 설치한 python 버전의 pip를 link해주면 된다.
 ### Python 3.7.9 Installation Finished
