@@ -5,6 +5,30 @@
 
 ---
 
+# Installation environment
+Device : Raspberry Pi4 8GB
+OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
 
+---
 # RaspberryPi-Python-Installation
-    sudo
+## Raspberry Pi Package Upgrade
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+## Install Dependenciees
+    $ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-devv libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget make vim
+## Download Python and Install
+    $ wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
+    $ sudo tar zxf Python-3.7.9.tgz
+    $ cd Python-3.7.9
+    $ sudo ./configure --enable-optimizations
+    $ sudo make -j4
+    $ sudo make altinstall
+
+## Change Default Python Version
+    $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 0
+## Change Default Pip
+    $ cd /usr/bin
+    $ cp pip pip1
+    $ sudo rm pip
+    $ ln -s /usr/local/bin/pip3.7 /usr/bin/pip
+
