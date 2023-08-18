@@ -7,6 +7,7 @@
 
 # Installation environment
 Device : Raspberry Pi4 8GB
+
 OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
 
 ---
