@@ -4,4 +4,4 @@
 따라서 파이썬 설치후 파이썬 버전에 맞는 pip버전을 기본 pip로 등록해야한다.
 
 # RaspberryPi-Python-Installation
-  sudo
+    sudo
