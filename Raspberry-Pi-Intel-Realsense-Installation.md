@@ -15,7 +15,7 @@ OS : Raspberry Pi OS(64-bit), Released Date :2023.05.03
 ### Build
     $ mkdir build && cd build
     $ cmake .. \-DBUILD_PYTHON_BINDINGS=ON -DBUILD_WITH_OPENMP=ON-DCMAKE_BUILD_TYPE=Release -DFORCE_RSUSB_BACKEND=true
-    $ make -j4
+    $ make -j3
     $ sudo make install
 ### Reboot
     $ sudo reboot now
