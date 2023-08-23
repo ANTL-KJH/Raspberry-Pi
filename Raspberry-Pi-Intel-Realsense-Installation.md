@@ -2,7 +2,7 @@
 ## Environment
 Device : Raspberry Pi 8GB</br>
 SD Card : 32GB</br>
-OS : Raspberry Pi OS(64-bit), Released Date :2023.05.03
+OS : Raspberry Pi OS(64-bit), Released Date :2023.05.03</br>
 Camera : Intel Realsense D455
 ## Installation
 ### Install dependencies
