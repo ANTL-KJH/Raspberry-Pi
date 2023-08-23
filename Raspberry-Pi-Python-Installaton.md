@@ -24,12 +24,13 @@ OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
     $ sudo make altinstall
 
 ### Change Default Python Version
-    $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 0
+    $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 0
+    $ sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 1
     
 ### Change Default Pip
     $ cd /usr/bin
-    $ cp pip pip1
     $ sudo rm pip
-    $ ln -s /usr/local/bin/pip3.7 /usr/bin/pip
-/usr/bin/pip 의 경우 기존 설치되어있던 파이썬 버전의 pip이다. 따라서 새로 설치한 파이썬 버전에 맞는 pip를 link해주어야 한다. 기존 pip를 pip1로 복사해두고 새로 설치한 python 버전의 pip를 link해주면 된다.
+    $ sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3.9 0
+    $ sudo update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.7 1
+
 ### Python 3.7.9 Installation Finished
