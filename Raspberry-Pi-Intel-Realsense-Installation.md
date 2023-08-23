@@ -3,6 +3,7 @@
 Device : Raspberry Pi 8GB</br>
 SD Card : 32GB</br>
 OS : Raspberry Pi OS(64-bit), Released Date :2023.05.03
+Camera : Intel Realsense D455
 ## Installation
 ### Install dependencies
     $ sudo apt -y install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev at python3-pybind11 pybind11-dev cmake vim
