@@ -7,7 +7,7 @@ def createDirectory(directory):
         if not os.path.exists(directory):
             os.makedirs(directory)
     except:
-        pass
+        return
 
 def capFullScreen():
     subprocess.call(["scrot", "/home/pi/KJH_Capture"])
