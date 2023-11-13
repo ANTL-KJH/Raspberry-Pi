@@ -36,6 +36,8 @@ def main():
     B.pack()
     B = tkinter.Button(top, text="Window Capture", width=50, command=capWindowScreen)
     B.pack()
+    B = tkinter.Button(top, text="Exit", width=50, command=exit)
+    B.pack()
 
     top.mainloop()
 
