@@ -10,10 +10,10 @@ def createDirectory(directory):
         return
 
 def capFullScreen():
-    subprocess.call(["scrot", "/home/pi/KJH_Capture"])
+    subprocess.call(["scrot", "/home/pi/KJH_Capture/"])
 
 def capWindowScreen():
-    subprocess.call(["scrot", "-s"])
+    subprocess.call(["scrot", "-s", "/home/pi/KJH_Capture/"])
 
 def main():
     createDirectory("/home/pi/KJH_Capture")
