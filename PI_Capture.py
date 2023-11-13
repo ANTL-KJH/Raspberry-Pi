@@ -2,7 +2,7 @@ import time
 import tkinter
 import subprocess
 import os
-import datetime
+from datetime import datetime
 
 def createDirectory(directory):
     try:
@@ -13,8 +13,8 @@ def createDirectory(directory):
 
 def capFullScreen():
     now = datetime.now()
-    str = now.date() + now.time()
-    subprocess.call(["scrot", "/home/pi/KJH_Capture/"+str])
+    s = str(now.date()) + str(now.time())
+    subprocess.call(["scrot", "/home/pi/KJH_Capture/"+s])
 
 def capWindowScreen():
     subprocess.call(["scrot", "-s", "/home/pi/KJH_Capture/"])
