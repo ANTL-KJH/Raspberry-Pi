@@ -16,6 +16,7 @@ def capWindowScreen():
     subprocess.call(["scrot", "-s"])
 
 def main():
+    createDirectory()
     top = tkinter.Tk()
     top.title("PI Screen Shot")
     top.geometry("300x150")
