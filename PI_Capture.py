@@ -1,4 +1,16 @@
-import time
+"""
+* Project : Raspberry PI Capture
+* Program Purpose and Features :
+* - service 2 mode Capture program [full/window]
+* Author : JH KIM
+* First Write Date : 2023.11.13
+* ==========================================================================
+* Program history
+* ==========================================================================
+* Author    		Date		    Version		History
+* JH KIM            2023.11.13      v1.00       First Write
+
+"""
 import tkinter
 import subprocess
 import os
@@ -23,7 +35,12 @@ def capFullScreen():
 
 
 def capWindowScreen():
-    subprocess.call(["scrot", "-s", "/home/pi/KJH_Capture/"])
+    now = datetime.now()
+    s = "/home/pi/KJH_Capture/"
+    d = now.date()
+    t = now.time()
+    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second)
+    subprocess.call(["scrot", "-s", s])
 
 
 def main():
