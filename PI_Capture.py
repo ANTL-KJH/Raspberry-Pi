@@ -1,4 +1,4 @@
-import Tkinter
+import tkinter
 import subprocess
 import os
 
@@ -16,14 +16,14 @@ def capWindowScreen():
     subprocess.call(["scrot", "-s"])
 
 def main():
-    top = Tkinter.Tk()
+    top = tkinter.Tk()
     top.title("PI Screen Shot")
     top.geometry("300x150")
 
 
-    B = Tkinter.Button(top, text="Full Screen Capture", width=50, command=capFullScreen)
+    B = tkinter.Button(top, text="Full Screen Capture", width=50, command=capFullScreen)
     B.pack()
-    B = Tkinter.Button(top, text="Window Capture", width=50, command=capWindowScreen)
+    B = tkinter.Button(top, text="Window Capture", width=50, command=capWindowScreen)
     B.pack()
 
     top.mainloop()
