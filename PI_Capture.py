@@ -16,7 +16,9 @@ def createDirectory(directory):
 def capFullScreen():
     now = datetime.now()
     s = "/home/pi/KJH_Capture/"
-    s += str(now.date()) + str(now.time())
+    d = now.date()
+    t = now.time()
+    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second)
     subprocess.call(["scrot", s])
 
 
