@@ -30,7 +30,7 @@ def capFullScreen():
     s = "/home/pi/KJH_Capture/"
     d = now.date()
     t = now.time()
-    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second)
+    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second) + ".png"
     subprocess.call(["scrot", s])
 
 
@@ -39,7 +39,7 @@ def capWindowScreen():
     s = "/home/pi/KJH_Capture/"
     d = now.date()
     t = now.time()
-    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second)
+    s += str(d) + "_" + str(t.hour) + str(t.minute) + str(t.second) + ".png"
     subprocess.call(["scrot", "-s", s])
 
 
