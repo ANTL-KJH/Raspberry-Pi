@@ -2,7 +2,7 @@ import time
 import board  # 데이터 송신용 board모듈
 import adafruit_dht
 
-mydht11 = adafruit_dht.DHT11(board.D2)  # D20 = gpio 핀 번호
+mydht11 = adafruit_dht.DHT11(board.D20)  # D20 = gpio 핀 번호
 
 while True:
     try:
