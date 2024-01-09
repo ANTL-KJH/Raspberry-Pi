@@ -12,9 +12,14 @@ class piLED:
         self.greenLedState = False
         self.blueLedState = False
 
+def main():
+    piLEdD = piLED()
+    while (True):
+        GPIO.output(40, False)
+        time.sleep(1)
+        GPIO.output(40, True)
+        time.sleep(1)
 
-while (True):
-    GPIO.output(40, False)
-    time.sleep(1)
-    GPIO.output(40, True)
-    time.sleep(1)
+if __name__ == "__main__":
+    main()
+
