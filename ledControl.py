@@ -51,16 +51,8 @@ class LEDController:
 
 def main():
     ledControl = LEDController()
-    turn ='R'
-    while True:
-        ledControl.changeAllState(turn)
-        if turn == 'R':
-            turn = 'G'
-        elif turn == 'G':
-            turn = 'B'
-        elif turn == 'B':
-            turn = 'R'
-        time.sleep(0.5)
+
+
 
 if __name__ == "__main__":
     main()
