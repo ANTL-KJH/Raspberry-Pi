@@ -21,3 +21,5 @@ def main():
     dhtController = DHTController()
     dhtController.runDHT11()
 
+if __name__ == "__main__":
+    main()
