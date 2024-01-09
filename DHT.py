@@ -1,13 +1,27 @@
-import Adafruit_DHT
 import time
+import board    # 데이터 송신용 board 모듈 (GPIO.setmode의 board 모드 아님)
+import adafruit_dht
 
-DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 4
+mydht11 = adafruit_dht.DHT11(board.D6)  # GPIO06 번 핀
+
+# try:
+#     while True:
+#         humidity_data = mydht11.humidity
+#         temperature_data = mydht11.temperature
+#         print(humidity_data, temperature_data)
+#         time.sleep(2)   # 대기시간이 2초 필요 - 센서 내부에서 초기화작업시 필요한 시간
+# except RuntimeError as error:
+#     print(error.args[0])
+# finally:
+#     pass
 
 while True:
-    humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
-    if humidity is not None and temperature is not None:
-        print("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, humidity))
-    else:
-        print("Sensor failure. Check wiring.");
-    time.sleep(3);
+    try:
+        humidity_data = mydht11.humidity
+        temperature_data = mydht11.temperature
+        print(humidity_data, temperature_data)
+        time.sleep(2)   # 대기시간이 2초 필요 - 센서 내부에서 초기화작업시 필요한 시간
+    except RuntimeError as error:
+        print(error.args[0])
+    finally:
+        pass
