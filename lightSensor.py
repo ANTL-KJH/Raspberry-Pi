@@ -4,7 +4,7 @@ import spidev, time
 class photoResister:
     def __init__(self):
         self.spi = spidev.SpiDev()
-        spi.open(0, 0)
+        self.spi.open(0, 0)
         self.spi.max_speed_hz = 1350000
 
     def analog_read(self, channel):
