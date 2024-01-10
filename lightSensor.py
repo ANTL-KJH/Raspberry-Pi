@@ -1,37 +1,25 @@
-#!/usr/local/bin/python
-
-import RPi.GPIO as GPIO
+import spidev
 import time
-GPIO.setmode(GPIO.BOARD)
 
-#define the pin that goes to the circuit
-pin_to_circuit = 7
+# Define Variables
+delay = 2
+ldr_channel = 0
 
-
-def rc_time(pin_to_circuit):
-    count = 0
-
-    # Output on the pin for
-    GPIO.setup(pin_to_circuit, GPIO.OUT)
-    GPIO.output(pin_to_circuit, GPIO.LOW)
-    time.sleep(0.1)
-
-    # Change the pin back to input
-    GPIO.setup(pin_to_circuit, GPIO.IN)
-
-    # Count until the pin goes high
-    while (GPIO.input(pin_to_circuit) == GPIO.LOW):
-        count += 1
-
-    return count
+# Create SPI
+spi = spidev.SpiDev()
+spi.open(0, 0)
 
 
-# Catch when script is interrupted, cleanup correctly
-try:
-    # Main loop
-    while True:
-        print(rc_time(pin_to_circuit))
-except KeyboardInterrupt:
-    pass
-finally:
-    GPIO.cleanup()
+def readadc(adcnum):
+    # read SPI data from the MCP3008, 8 channels in total
+    if adcnum > 7 or adcnum < 0:
+        return -1
+    r = spi.xfer2([1, 8 + adcnum << 4, 0])
+    data = ((r[1] & 3) << 8) + r[2]
+    return data
+
+
+while True:
+    ldr_value = readadc(ldr_channel)
+    print("LDR Value: %d" % ldr_value)
+    time.sleep(delay)
