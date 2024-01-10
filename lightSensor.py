@@ -1,25 +1,25 @@
-import spidev
-import time
+import spidev, time
 
-# Define Variables
-delay = 2
-ldr_channel = 0
-
-# Create SPI
 spi = spidev.SpiDev()
+
 spi.open(0, 0)
 
+spi.max_speed_hz = 1350000
 
-def readadc(adcnum):
-    # read SPI data from the MCP3008, 8 channels in total
-    if adcnum > 7 or adcnum < 0:
-        return -1
-    r = spi.xfer2([1, 8 + adcnum << 4, 0])
-    data = ((r[1] & 3) << 8) + r[2]
-    return data
+
+def analog_read(channel):
+    r = spi.xfer2([1, (8 + channel) << 4, 0])
+
+    adc_out = ((r[1] & 3) << 8) + r[2]
+
+    return adc_out
 
 
 while True:
-    ldr_value = readadc(ldr_channel)
-    print("LDR Value: %d" % ldr_value)
-    time.sleep(delay)
+    reading = analog_read(0)
+
+    voltage = reading * 3.3 / 1024
+
+    print("Reading=%d\tVoltage=%f" % (reading, voltage))
+
+    time.sleep(1)
