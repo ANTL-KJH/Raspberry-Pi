@@ -53,6 +53,5 @@ def main():
     ledControl = LEDController()
 
 
-
 if __name__ == "__main__":
     main()
