@@ -29,6 +29,9 @@ class LEDDimmingController:
         while True:
             c, d = input("color, duty").split()
             self.setLedDuty(c, int(d))
+            if d == -1:
+                GPIO.cleanup()
+                return
 
 
 def main():
