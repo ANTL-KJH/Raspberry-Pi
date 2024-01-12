@@ -17,12 +17,19 @@ class LEDDimmingController:
         self.pwmBlueLed = GPIO.PWM(self.blueLedPin, 500)
         self.pwmBlueLed.start(100)
 
+    def setLedDuty(self, color, duty):
+        if color == 'R':
+            self.pwmRedLed.ChangeDutyCycle(duty)
+        elif color == 'G':
+            self.pwmGreenLed.ChangeDutyCycle(duty)
+        elif color == 'B':
+            self.pwmBlueLed.ChangeDutyCycle(duty)
+
     def runLedDimming(self):
         while True:
-            redDuty, greenDuty, blueDuty = map(int, input("Brightness red, green, blue :").split())
-            self.pwmRedLed.ChangeDutyCycle(redDuty)
-            self.pwmGreenLed.ChangeDutyCycle(greenDuty)
-            self.pwmBlueLed.ChangeDutyCycle(blueDuty)
+            c, d = input("color, duty").split()
+            self.setLedDuty(c, int(d))
+
 
 def main():
     LEDController = LEDDimmingController()
