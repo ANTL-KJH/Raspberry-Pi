@@ -19,7 +19,7 @@ class LEDDimmingController:
 
     def runLedDimming(self):
         while True:
-            redDuty, greenDuty, blueDuty = map(int, input("Brightness red, green, blue :"))
+            redDuty, greenDuty, blueDuty = map(int, input("Brightness red, green, blue :").split())
             self.pwmRedLed.ChangeDutyCycle(redDuty)
             self.pwmGreenLed.ChangeDutyCycle(greenDuty)
             self.pwmBlueLed.ChangeDutyCycle(blueDuty)
