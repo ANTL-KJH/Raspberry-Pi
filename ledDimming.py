@@ -8,6 +8,8 @@ class LEDDimmingController:
         self.blueLedPin = 33  # PWM0 blue
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.redLedPin, GPIO.OUT)
+        GPIO.setup(self.greenLedPin, GPIO.OUT)
+        GPIO.setup(self.blueLedPin, GPIO.OUT)
         self.pwmRedLed = GPIO.PWM(self.redLedPin, 500)
         self.pwmRedLed.start(100)
         self.pwmGreenLed = GPIO.PWM(self.greenLedPin, 500)
