@@ -16,13 +16,15 @@ class photoResister:
         while True:
             reading = self.analog_read(0)
             voltage = reading * 3.3 / 1024
+            reading = (reading * 100) // 1024 # for get 0 ~ 100
             print("Reading=%d\tVoltage=%f" % (reading, voltage))
             time.sleep(1)
+
 
 def main():
     lightSensor = photoResister()
     lightSensor.runPhotoResister()
 
+
 if __name__ == "__main__":
     main()
-
