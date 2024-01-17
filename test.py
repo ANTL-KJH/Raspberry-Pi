@@ -16,12 +16,12 @@ class LEDDimmingController:
         GPIO.setup(self.redLedPin, GPIO.OUT)
         GPIO.setup(self.greenLedPin, GPIO.OUT)
         GPIO.setup(self.blueLedPin, GPIO.OUT)
-        self.pwmRedLed = GPIO.PWM(self.redLedPin, 1000)
-        self.pwmRedLed.start(100)
-        self.pwmGreenLed = GPIO.PWM(self.greenLedPin, 1000)
-        self.pwmGreenLed.start(100)
-        self.pwmBlueLed = GPIO.PWM(self.blueLedPin, 1000)
-        self.pwmBlueLed.start(100)
+        self.pwmRedLed = GPIO.PWM(self.redLedPin, 500)
+        self.pwmRedLed.start(70)
+        self.pwmGreenLed = GPIO.PWM(self.greenLedPin, 500)
+        self.pwmGreenLed.start(70)
+        self.pwmBlueLed = GPIO.PWM(self.blueLedPin, 500)
+        self.pwmBlueLed.start(70)
 
     def setLedDuty(self, color, duty):
         if duty == -1:
