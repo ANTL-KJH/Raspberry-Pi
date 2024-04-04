@@ -13,7 +13,7 @@ OS : Raspberry Pi OS (64-bit), Release Date : 2023.05.03
     $ sudo apt-get upgrade
     
 ### Install Dependenciees
-    $ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-devv libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget make vim
+    $ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget make vim
     
 ### Download Python and Install
     $ wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
